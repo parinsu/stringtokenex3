@@ -2,14 +2,19 @@
 package stringtokenex3;
 
 import java.util.StringTokenizer;
+import java.io.File;
+import java.util.Scanner;
 
 
 public class StringTokenEx3 {
 
  
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
+        File file = new File("Test.txt");
         
-        String delims = ",";
+        Scanner input = new Scanner(file);
+        
+        /*String delims = ",";
         String splitString = "one,two,,three,four,,five";
         
         System.out.println("StringTokenizer Example: \n");
@@ -26,6 +31,13 @@ public class StringTokenEx3 {
             System.out.println("Split Output: " + tokens[j]);
         }
         System.out.println();
+        */
+        
+        while(input.hasNext()){
+            System.out.println(input.next());
+        }
+        
+        
     }
     
 }
