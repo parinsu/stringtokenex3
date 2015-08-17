@@ -14,8 +14,16 @@ public class StringTokenEx3 {
         
         Scanner input = new Scanner(file);
         
-        /*String delims = ",";
-        String splitString = "one,two,,three,four,,five";
+        System.out.println("File Length: " + file.length());
+        
+        /*while(input.hasNext()){
+            System.out.println(input.next());
+        }*/
+        
+        String delims = "\\s+";
+        String splitString;
+        
+       /* String splitString = "one,two,,three,four,,five";
         
         System.out.println("StringTokenizer Example: \n");
         StringTokenizer st = new StringTokenizer(splitString, delims);
@@ -33,9 +41,7 @@ public class StringTokenEx3 {
         System.out.println();
         */
         
-        while(input.hasNext()){
-            System.out.println(input.next());
-        }
+        
         
         
     }
