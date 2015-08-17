@@ -1,0 +1,7 @@
+
+
+public class C1 extends C {
+    public C2 {
+        System.out.println("This is from C2");
+    }
+}
