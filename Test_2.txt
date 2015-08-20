@@ -9,7 +9,7 @@ public class StringTokenEx3 {
 
     public static void main(String[] args) throws Exception {
         File file = new File("Test_1.txt");
-
         
+        System.out.println("This is end of the walk way.");
 
 }
