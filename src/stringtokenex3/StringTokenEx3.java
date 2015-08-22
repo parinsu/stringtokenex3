@@ -12,7 +12,6 @@ public class StringTokenEx3 {
 
         Scanner input = new Scanner(file);
         System.out.println(input);
-        //String splitString;
         StringTokenizer st;
         String delims = " ";
         ArrayList token = new ArrayList();
@@ -22,9 +21,7 @@ public class StringTokenEx3 {
                 token.add(st.nextToken());
             }
         }
-        /*for (Object token1 : token) {
-            System.out.println(token1);
-        }*/
+
         //checkForInherite(token);
         checkForObjectCreation(token);
         
@@ -57,17 +54,11 @@ public class StringTokenEx3 {
             s2 = a.get(i+1).toString();
             s3 = a.get(i-3).toString();
             
-            /*System.out.println("s0: " + s0);
-            System.out.println("s1: " + s1);
-            System.out.println("s2: " + s2);
-            System.out.println("s3: " + s3);
-            */
             if (s0.equals("new")&&(s1.equals("=")) && (s2.contains(s3)))
             {
                
                 System.out.println("Found Object Creation.");
             }
-            //System.out.println(s0);
             
         }
     }
