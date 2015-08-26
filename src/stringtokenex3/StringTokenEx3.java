@@ -8,7 +8,7 @@ import java.util.Scanner;
 public class StringTokenEx3 {
 
     public static void main(String[] args) throws Exception {
-        File file = new File("Test_2.txt");
+        File file = new File("C.java");
 
         Scanner input = new Scanner(file);
         System.out.println(input);
@@ -22,29 +22,27 @@ public class StringTokenEx3 {
             }
         }
 
-        //checkForInherite(token);
+        checkForInherite(token);
         checkForObjectCreation(token);
         
     }
-    protected static void checkForInherite(ArrayList a) {
+    public static void checkForInherite(ArrayList a) {
         int j = 0;
         
         for(int i = 0; i < a.size();i++ )
         {
             if(a.get(i).equals("extends"))
             {
-                System.out.println("Found Inherite");
+                //System.out.println("Found Inherite");
+                
             }
-            else
-            {
-                System.out.println("Not found");
-            }
+
         }
    
 
     }
     
-    protected static void checkForObjectCreation(ArrayList a) {
+    public static void checkForObjectCreation(ArrayList a) {
         //int j = 0;
         String s0,s1,s2,s3;
         for (int i = 3; i < a.size()-3; i++) {
@@ -54,7 +52,7 @@ public class StringTokenEx3 {
             s2 = a.get(i+1).toString();
             s3 = a.get(i-3).toString();
             
-            if (s0.equals("new")&&(s1.equals("=")) && (s2.contains(s3)))
+            if (s0.equals("new") && (s2.contains(s3)))
             {
                
                 System.out.println("Found Object Creation.");
