@@ -1,16 +1,13 @@
 package stringtokenex3;
 
 import java.util.*;
-//import java.util.StringTokenizer;
 import java.io.*;
-//import java.util.Scanner;
 
 public class StringTokenEx3 {
     
-    private static final String FILE_HEADER = "Parent, Child";
+    private static final String FILE_HEADER = "Parent,Child";
     private static final String COMMA_DELIMITER = ",";
     private static final String NEW_LINE_SEPARATOR = "\n";
-
 
     public static void main(String[] args) throws Exception {
         
@@ -21,7 +18,7 @@ public class StringTokenEx3 {
         StringTokenizer st;
         String delims = " ";
         ArrayList token = new ArrayList();  
-        ArrayList<Link> link = new ArrayList();
+        ArrayList<Link> inherite = new ArrayList();
         while (input.hasNext()) {
             st = new StringTokenizer(input.next(), delims);
             while (st.hasMoreTokens()) {
@@ -29,28 +26,20 @@ public class StringTokenEx3 {
             }
         }
 
-        checkForInherite(token,link);
+        checkForInherite(token,inherite);
         //checkForObjectCreation(token);
         
         FileWriter fileWriter;
         fileWriter = new FileWriter("Example.csv");
         fileWriter.append(FILE_HEADER);
         fileWriter.append(NEW_LINE_SEPARATOR);
-        for(Link link1: link){
-            fileWriter.append(link1.getParent());
+        for(Link inherites: inherite){
+            fileWriter.append(inherites.getParent());
             fileWriter.append(COMMA_DELIMITER);
-            fileWriter.append(link1.getChild());
+            fileWriter.append(inherites.getChild());
         }
         fileWriter.flush();
-
         fileWriter.close();
-
-        
-
-
-
-
-        
     }
     public static void checkForInherite(ArrayList a, ArrayList<Link> l) {
         int j = 0;
