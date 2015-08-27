@@ -37,6 +37,7 @@ public class StringTokenEx3 {
             fileWriter.append(inherites.getParent());
             fileWriter.append(COMMA_DELIMITER);
             fileWriter.append(inherites.getChild());
+            fileWriter.append(NEW_LINE_SEPARATOR);
         }
         fileWriter.flush();
         fileWriter.close();
@@ -44,11 +45,12 @@ public class StringTokenEx3 {
 
     public static void checkForInherite(ArrayList a, ArrayList<Link> l) {
         int j = 0;
+        Link lo;
 
         for (int i = 0; i < a.size(); i++) {
             if (a.get(i).equals("extends")) {
                 System.out.println("Found Inherite");
-                Link lo = new Link();
+                lo = new Link();
                 lo.setParent(a.get(i - 1).toString());
                 System.out.println(lo.getParent());
                 lo.setChild(a.get(i + 1).toString());
