@@ -27,7 +27,7 @@ public class StringTokenEx3 {
         }
 
         checkForInherite(token, inherite);
-        //checkForObjectCreation(token);
+        checkForObjectCreation(token);
 
         FileWriter fileWriter;
         fileWriter = new FileWriter("Example.csv");
@@ -61,18 +61,17 @@ public class StringTokenEx3 {
     }
 
     public static void checkForObjectCreation(ArrayList a) {
-        //int j = 0;
-        String s0, s1, s2, s3;
-        for (int i = 3; i < a.size() - 3; i++) {
-            s0 = a.get(i).toString();
-            s1 = a.get(i - 1).toString();
-            s2 = a.get(i + 1).toString();
-            s3 = a.get(i - 3).toString();
 
-            if (s0.equals("new") && (s2.contains(s3))) {
-                System.out.println("Found Object Creation.");
+        String s0, s1;
+
+        for (int i = 0; i < a.size(); i++) {
+            if (i < a.size() - 1) {
+                s0 = a.get(i).toString();
+                s1 = a.get(i + 1).toString();
+                if (s0.equals("new")) {
+                    System.out.println("Found Object Creation.");
+                }
             }
-
         }
     }
 }
