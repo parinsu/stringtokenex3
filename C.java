@@ -1,6 +1,5 @@
 import java.io.*;
 public class c extends A 
-public class B extends C
 {
 	String name1;
 	String name2;
