@@ -10,12 +10,18 @@ package stringtokenex3;
  * @author Wind
  */
 public class Link {
+    
+    //private static int id;
+    
     private String parent;
     private String child;
+    private int id;
+    
     
     public Link(){
         parent = null;
         child = null;
+        id++;
     }
     
     public void setParent(String p){
@@ -24,11 +30,22 @@ public class Link {
     public void setChild(String c){
         child = c;
     }
+    public void setId(int i){
+        id = i;
+    }
+    
     public String getParent(){
         return parent;
     }
     public String getChild(){
         return child;
     }
+    public String getId(){
+        return Integer.toString(id);
+    }
+    
+    
+    
+    
     
 }
