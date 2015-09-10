@@ -11,36 +11,43 @@ public class StringTokenEx3 {
 
     public static void main(String[] args) throws Exception {
 
-        File file = new File("C.java");
-
-        Scanner input = new Scanner(file);
-        System.out.println(input);
-        StringTokenizer st;
-        String delims = " ";
+        //File file = new File("C.java");
+        // Define directory
+        String target_dir = "./test_dir";
+        File dir = new File(target_dir);
+        File[] files = dir.listFiles();
         ArrayList token = new ArrayList();
         ArrayList<Link> inherite = new ArrayList();
-        while (input.hasNext()) {
-            st = new StringTokenizer(input.next(), delims);
-            while (st.hasMoreTokens()) {
-                token.add(st.nextToken());
+        StringTokenizer st;
+        String delims = " ";
+
+        for (File f : files) {
+            Scanner input = new Scanner(f);
+            //System.out.println(input);
+                       
+            while (input.hasNext()) {
+                st = new StringTokenizer(input.next(), delims);
+                while (st.hasMoreTokens()) {
+                    token.add(st.nextToken());
+                }
             }
-        }
 
-        checkForInherite(token, inherite);
-        checkForObjectCreation(token);
+            checkForInherite(token, inherite);
+            checkForObjectCreation(token);
 
-        FileWriter fileWriter;
-        fileWriter = new FileWriter("Example.csv");
-        fileWriter.append(FILE_HEADER);
-        fileWriter.append(NEW_LINE_SEPARATOR);
-        for (Link inherites : inherite) {
-            fileWriter.append(inherites.getParent());
-            fileWriter.append(COMMA_DELIMITER);
-            fileWriter.append(inherites.getChild());
+            FileWriter fileWriter;
+            fileWriter = new FileWriter("Example.csv");
+            fileWriter.append(FILE_HEADER);
             fileWriter.append(NEW_LINE_SEPARATOR);
+            for (Link inherites : inherite) {
+                fileWriter.append(inherites.getParent());
+                fileWriter.append(COMMA_DELIMITER);
+                fileWriter.append(inherites.getChild());
+                fileWriter.append(NEW_LINE_SEPARATOR);
+            }
+            fileWriter.flush();
+            fileWriter.close();
         }
-        fileWriter.flush();
-        fileWriter.close();
     }
 
     public static void checkForInherite(ArrayList a, ArrayList<Link> l) {
@@ -61,17 +68,18 @@ public class StringTokenEx3 {
     }
 
     public static void checkForObjectCreation(ArrayList a) {
+        //int j = 0;
+        String s0, s1, s2, s3;
+        for (int i = 3; i < a.size() - 3; i++) {
+            s0 = a.get(i).toString();
+            s1 = a.get(i - 1).toString();
+            s2 = a.get(i + 1).toString();
+            s3 = a.get(i - 3).toString();
 
-        String s0, s1;
-
-        for (int i = 0; i < a.size(); i++) {
-            if (i < a.size() - 1) {
-                s0 = a.get(i).toString();
-                s1 = a.get(i + 1).toString();
-                if (s0.equals("new")) {
-                    System.out.println("Found Object Creation.");
-                }
+            if (s0.equals("new") && (s2.contains(s3))) {
+                System.out.println("Found Object Creation.");
             }
+
         }
     }
 }
