@@ -12,7 +12,6 @@ public class StringTokenEx3 {
 
     public static void main(String[] args) throws Exception {
 
-        //File file = new File("C.java");
         // Define directory
         String target_dir = "./test_dir";
         File dir = new File(target_dir);
@@ -23,9 +22,9 @@ public class StringTokenEx3 {
         StringTokenizer st;
         String delims = " ";
 
+        //Walkthrough each file
         for (File f : files) {
             Scanner input = new Scanner(f);
-            //System.out.println(input);
                        
             while (input.hasNext()) {
                 st = new StringTokenizer(input.next(), delims);
