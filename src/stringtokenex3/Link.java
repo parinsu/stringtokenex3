@@ -1,35 +1,27 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package stringtokenex3;
 
-/**
- *
- * @author Wind
- */
 public class Link {
-    
-    //private static int id;
-    
+      
     private String parent;
     private String child;
     private int id;
     
-    
     public Link(){
         parent = null;
         child = null;
-        id++;
+        id = 0;
+        
     }
     
     public void setParent(String p){
         parent = p;
     }
+    
     public void setChild(String c){
         child = c;
     }
+    
     public void setId(int i){
         id = i;
     }
@@ -40,12 +32,9 @@ public class Link {
     public String getChild(){
         return child;
     }
-    public String getId(){
-        return Integer.toString(id);
-    }
     
-    
-    
-    
+    public int getId(){
+        return id;
+    } 
     
 }

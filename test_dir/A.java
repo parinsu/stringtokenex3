@@ -1,9 +1,9 @@
 
 import java.io.*;
 
-public class A {
+public class A extends X {
 
     public static void main(String args[]) {
-        
+
     }
 }

@@ -1,2 +1,7 @@
 Parent,Child
-c,A,1
+A,X,1
+A,X,1
+B,Y,1
+A,X,1
+B,Y,1
+C,A,1

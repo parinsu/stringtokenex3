@@ -1,7 +1,7 @@
 
 import java.io.*;
 
-public class B {
+public class B extends Y {
 
     String name;
 
