@@ -6,11 +6,9 @@ import java.io.*;
 public class StringTokenEx3 {
 
     private static final String FILE_HEADER = "Parent, Child, , ID, Relation";
-
     private static final String COMMA_DELIMITER = ",";
     private static final String NEW_LINE_SEPARATOR = "\n";
     public static int inhid = 0;
-    public static int relid = 0;
 
     public static void main(String[] args) throws Exception {
 
@@ -73,6 +71,8 @@ public class StringTokenEx3 {
         Link lo;
         String s0, s1, s2;
         for (int i = 0; i < a.size(); i++) {
+
+            // Condition for inheritance checking
             if (a.get(i).equals("extends")) {
                 lo = new Link();
                 inhid++;
@@ -87,6 +87,7 @@ public class StringTokenEx3 {
                 l3.add(lo);
             }
 
+            // Condition for reliazation checking
             if (a.get(i).toString().equals("new")) {
                 lo = new Link();
                 s1 = a.get(i + 1).toString();
@@ -104,6 +105,10 @@ public class StringTokenEx3 {
                 l3.add(lo);
 
             }
+
         }
+    // End of checkForRelation method  
     }
+
+// End of class     
 }
